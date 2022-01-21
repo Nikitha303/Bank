@@ -12,8 +12,19 @@ public class Start {
 	private Integer id;
 	private String customername;
 	private String gender;
+	private String dob;
+	private String address;
 	private String city;
 	private String state;
+	private String pin;
+	private String telephone;
+	private String fax;
+	private String email;
+	
+
+	
+	
+
 	public String getCity() {
 		return city;
 	}
@@ -47,6 +58,52 @@ public class Start {
 	}
 	public String getCustomername() {
 		return customername;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPin() {
+		return pin;
+	}
+
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	public String getFax() {
+		return fax;
+	}
+
+	public void setFax(String fax) {
+		this.fax = fax;
+	}
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	

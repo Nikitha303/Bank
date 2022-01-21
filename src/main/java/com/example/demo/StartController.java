@@ -23,8 +23,14 @@ public class StartController {
 			void createStart (@RequestBody Start start) {
 				System.out.println(start.getCustomername());
 				System.out.println(start.getGender());
+				System.out.println(start.getDob());
+				System.out.println(start.getAddress());
 				System.out.println(start.getCity());
 				System.out.println(start.getState());
+				System.out.println(start.getPin());
+				System.out.println(start.getTelephone());
+				System.out.println(start.getFax());
+				System.out.println(start.getEmail());
 			startService.saveStart(start);
 			}
 			
