@@ -1,7 +1,10 @@
 package com.example.demo;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Optional;
+import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,13 +17,16 @@ public class StartController {
 	        @Autowired
 			IStartService startService;
 			@GetMapping("/start")
-			String getStart() {
-			    System.out.println("testing");
-			    return "testing";
+			Iterable<Start> getStarts() {
+			      return startService.getStarts();
 			 }
+			@GetMapping("/start/{id}")
+			Optional<Start> getStarts(@PathVariable("id")Integer id){
+				return startService.getStart(id);
+			}
 	      
 			@PostMapping("/start") // create
-			void createStart (@RequestBody Start start) {
+			void createStart (@RequestBody @Valid Start start) {
 				System.out.println(start.getCustomername());
 				System.out.println(start.getGender());
 				System.out.println(start.getDob());
