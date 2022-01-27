@@ -89,6 +89,24 @@ public class Start {
 	public void setDeposit(Deposit deposit) {
 		this.deposit = deposit;
 	}
+	
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="account_id", referencedColumnName = "id")
+	Account account;
+	
+	
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+
+
+
 
 	public String getCity() {
 		return city;
