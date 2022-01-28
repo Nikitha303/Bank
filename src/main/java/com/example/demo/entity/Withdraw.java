@@ -7,15 +7,17 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
+public class Withdraw {
 
-public class Deposit {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
 	private String accountnumber;
 	private Double amount;
-	@OneToOne(mappedBy ="deposit")
+	@OneToOne(mappedBy ="withdraw")
 	Start start;
+
 	public String getAccountnumber() {
 		return accountnumber;
 	}
@@ -27,6 +29,14 @@ public class Deposit {
 	}
 	public void setAmount(Double amount) {
 		this.amount = amount;
-		
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 }
+
+	
+	

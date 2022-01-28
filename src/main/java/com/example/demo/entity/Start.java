@@ -105,8 +105,17 @@ public class Start {
 	}
 
 
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="withdraw_id", referencedColumnName = "id")
+	Withdraw withdraw;
+	
+	public Withdraw getWithdraw() {
+		return withdraw;
+	}
 
-
+	public void setWithdraw(Withdraw withdraw) {
+		this.withdraw = withdraw;
+	}
 
 	public String getCity() {
 		return city;
