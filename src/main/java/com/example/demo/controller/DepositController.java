@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,10 +23,10 @@ public class DepositController {
 	 }
   
 	@PostMapping("/deposit") // create
-	void createDeposit (@RequestBody @Valid Deposit deposit) {
+	void createDeposit (@RequestBody @Valid Deposit deposit, @PathVariable("id") Integer id) {
 		System.out.println(deposit.getAccountnumber());
 		System.out.println(deposit.getAmount());
-	depositService.saveDeposit(deposit);
+	depositService.saveDeposit(deposit, id);
 	}
 	
 	

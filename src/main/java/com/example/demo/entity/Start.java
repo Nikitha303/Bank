@@ -116,6 +116,19 @@ public class Start {
 	public void setWithdraw(Withdraw withdraw) {
 		this.withdraw = withdraw;
 	}
+	
+	public BalanceEnquiry getBalanceEnquiry() {
+		return balanceEnquiry;
+	}
+
+	public void setBalanceEnquiry(BalanceEnquiry balanceEnquiry) {
+		this.balanceEnquiry = balanceEnquiry;
+	}
+
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="balanceEnquiry_id", referencedColumnName = "id")
+	BalanceEnquiry balanceEnquiry;
 
 	public String getCity() {
 		return city;
